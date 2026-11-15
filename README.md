@@ -1,11 +1,7 @@
-# ASSMedia
+# Anti Social Social Media
 
-**Anti-Social Social Media.** Your X bookmarks and Instagram saves, downloaded to your own disk and filed as pages in your Obsidian vault: the posts you kept, without the feed.
+**Anti-Social Social Media.** Your X bookmarks and Instagram saves, downloaded to your own disk and filed as pages in your Obsidian vault: the posts you kept, without the feed.  
 
-What the tool gives you, its commands, and how to run them live here. The other docs link to this file instead of repeating it.
-
-- **What it does:** [the files on your disk and the pages in your vault](#what-it-does)
-- **Schemas:** [X](assmedia/x/Schema.md) and [Instagram](assmedia/instagram/Schema.md): every page property and the gallery-dl field it comes from
 - **Design:** [Design.md](Design.md): why it works this way, [the tool](Design.md#tool-layout), [its downloads](Design.md#media-downloads), and [what a page holds](Design.md#the-pages)
 - **Tagging rules:** [Tagging.md](Tagging.md)
 - **A new machine or another user:** [Setup](#setup)
@@ -47,9 +43,15 @@ Each post gets one page, in `<vault>\wiki\sources\X\` or `<vault>\wiki\sources\I
 2. **The media, inline:** each video as a player and each image in place, straight from `<raw>`.
 3. **The text, word for word:** a bookmark's tweet with its thread and the tweet it quotes, or a save's caption.
 
-**What each property holds, and the gallery-dl field it comes from,** is in each platform's schema: [X](assmedia/x/Schema.md) and [Instagram](assmedia/instagram/Schema.md). How titles are chosen, and how the text and media are laid out, is in [The pages](Design.md#the-pages).
+### The schemas
 
-**Around the pages:**
+**What each property holds, and the gallery-dl field it comes from,** is in each platform's schema. 
+- [X](assmedia/x/Schema.md)
+- [Instagram](assmedia/instagram/Schema.md)
+
+### The pages
+
+How titles are chosen, and how the text and media are laid out, is in [The pages](Design.md#the-pages).
 - **Shared pages:** a person, subject or theme that 2 or more posts link to can get a page of its own, shared by both platforms. It shows every post that links to it as a gallery of cards ([Tags, entities, concepts, domains](Design.md#tags-entities-concepts-domains)).
 - **An index per platform:** an Obsidian Base, `Bases\X Bookmarks.base` or `Bases\Instagram Saves.base`. The tool doesn't create these two files; [The Bases](Design.md#the-bases) lists their views.
 - **The vault's log and index:** each batch adds a line to `wiki\log.md`, and each new shared page gets a line in `wiki\index.md`, or in its domain folder's own index.

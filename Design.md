@@ -1,5 +1,5 @@
 
-# ASSMedia: design
+# Design
 
 What ASSMedia does and why, how its folders are laid out, and what a page holds. 
 
@@ -7,7 +7,7 @@ ASSMedia turns the posts you save on social media into pages in an Obsidian vaul
 
 ## Intent
 
-I save posts I want back, and the platforms are bad at giving them back. I have 1000s of bookmarked posts across various social media platforms.
+I save posts I want back, and the platforms are bad at giving them back. I have thousands of bookmarked posts across various social media platforms.
 - **X bookmarks:** I search X by keywords, and sometimes I find one, sometimes I don't. They're a mix of text tweets and long posts, graphics such as character design sheets, videos, and replies, threads and quote tweets.
 - **Instagram saves:** when I half-remember one, it's usually by **what was in it**, a person, a subject or a theme, more than by who posted it.
 
