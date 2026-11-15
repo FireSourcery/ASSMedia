@@ -1,6 +1,6 @@
 # Anti Social Social Media
 
-**Anti-Social Social Media.** Your X bookmarks and Instagram saves, downloaded to your own disk and filed as pages in your Obsidian vault: the posts you kept, without the feed.  
+Your X bookmarks and Instagram saves, downloaded to your own disk and filed as pages in your Obsidian vault: the posts you kept, without the feed.  
 
 - **Design:** [Design.md](Design.md): why it works this way, [the tool](Design.md#tool-layout), [its downloads](Design.md#media-downloads), and [what a page holds](Design.md#the-pages)
 - **Tagging rules:** [Tagging.md](Tagging.md)
@@ -14,6 +14,7 @@ ASSMedia downloads the posts you've saved, X bookmarks and Instagram saves, into
 
 You run the downloads, with your own browser login ([Update](#1-update-you-run-this)). Claude reads each post's text, tags it and writes the pages ([Process](#2-process-claude-runs-these)).
 
+![](demo.png)
 ### On your disk
 
 The media and gallery-dl's JSON go under the folder you set as `[paths] raw` in `assmedia.toml`, one folder per platform:
