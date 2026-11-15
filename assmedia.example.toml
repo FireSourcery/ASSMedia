@@ -1,0 +1,20 @@
+# ASSMedia's instance config. Copy this file to assmedia.toml beside assmedia.py and fill in your values.
+# assmedia.toml is never tracked by git. Paths are absolute and use forward slashes. README.md, "Setup", has
+# what each key does.
+
+[paths]
+raw = "D:/ASSMedia/raw"        # what the tool pulls: <raw>/<Platform>/items, threads, thumbs
+vault = "D:/Vault"               # the Obsidian vault the pages go into
+state = "D:/ASSMedia/state"    # what it keeps for itself: <state>/<Platform>/_crawl, tagging, build
+ffmpeg = "D:/Tools/ffmpeg.exe"   # makes video thumbnails
+
+[gallery-dl]
+cookies = "firefox"              # the browser you're signed in with: firefox, chrome, edge, ...
+
+# One section per platform you use. Leave a section out and that platform's commands say it isn't set up.
+
+[x]
+own = ["your_x_username"]        # your own X usernames: never tagged as a creator
+
+[instagram]
+saved = "your_instagram_username"   # whose Saved feed `update` downloads

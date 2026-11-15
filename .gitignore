@@ -1,0 +1,10 @@
+# An instance's data never goes in the repo: what the tool pulls, what it keeps, its records, its config.
+raw/
+state/
+logs/
+assmedia.toml
+
+# Python and tool scratch
+__pycache__/
+.superpowers/
+*.relink-tmp
