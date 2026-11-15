@@ -79,7 +79,7 @@ class RenderPageTests(unittest.TestCase):
         meta, _ = split(self.render(["X_01.mp4"], tags(people=["A"], creator_person="B")))
         self.assertEqual(meta["people"], ["[[A]]", "[[B]]"])
 
-    PLAYER2 = '<video controls preload="metadata" width="360" src="file:///D:/m/raw/Instagram/items/X/X_02.mp4"></video>'
+    PLAYER2 = '<video controls preload="metadata" src="file:///D:/m/raw/Instagram/items/X/X_02.mp4"></video>'
 
     def test_page_body_is_media_then_caption(self):
         _, body = split(self.render(["X_01.jpg", "X_02.mp4"], tags(), thumb=thumb_ref("X", "external", THUMBS)))
@@ -177,7 +177,7 @@ class RenderPageTests(unittest.TestCase):
         lines = legacy_body_lines(post, "file:///Z:/I", "file:///Z:/T")
         self.assertIn("![](file:///Z:/T/X.jpg)", lines)
         self.assertIn("- [Open photo 1](file:///Z:/I/X/X_01.jpg)", lines)
-        self.assertIn('<video controls preload="metadata" width="360" src="file:///Z:/I/X/X_02.mp4"></video>', lines)
+        self.assertIn('<video controls preload="metadata" src="file:///Z:/I/X/X_02.mp4"></video>', lines)
 
     def test_thumb_ref_vault(self):
         ref = thumb_ref("X", "vault", THUMBS)

@@ -200,7 +200,7 @@ The page is the raw copy: `<raw>` holds the JSON and media, and the vault holds 
   - their continuation below it
   - then the quoted tweet's media
 
-  Videos have no fixed width, so Obsidian shows each at its own size, up to the pane's width. Other people's tweets in the thread contribute text only.
+  Videos have no fixed width, so Obsidian shows each at its own size, up to the pane's width; the vault's `Media.css` snippet also keeps each no taller than the window. Other people's tweets in the thread contribute text only.
 - **The text:** each tweet is its own quote block, with its author, date and X link. The sections come in this order:
   1. `## Earlier in the thread`: each tweet above the bookmarked one, or `*(earlier tweets unavailable)*` when the chain breaks
   2. `## Bookmarked tweet`
@@ -219,7 +219,7 @@ The page is the raw copy: `<raw>` holds the JSON and media, and the vault holds 
 
 ### Instagram: `wiki/sources/Instagram/<title>.md`
 
-- **The media,** in post order. Each video is a `<video controls preload="metadata" width="360">` player: Markdown embeds of files outside the vault don't play, and Instagram videos are mostly vertical, so the width is fixed.
+- **The media,** in post order. Each video is a `<video controls preload="metadata">` player, because Markdown embeds of files outside the vault don't play. Like X's, it has no fixed width: the vault's `Media.css` snippet fits it to the pane and keeps it no taller than the window, so mostly vertical Instagram videos fit on screen and resize with the window.
 - **The caption:** in one quote block. An empty caption is `*(no caption)*`.
 - **Saved date:** the day the post's folder was made, which is the download day. Instagram's feed carries no saved date, so a first full download dates the whole backlog that day, and the All view then orders it by `published`. `saved` is defined in [Schema.md](assmedia/instagram/Schema.md).
 - **When it's written:** when the post's folder is complete.

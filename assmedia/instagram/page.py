@@ -52,7 +52,7 @@ def _people(tags: Tags) -> list[str]:
 
 def video_players(post: Post, items_url: str) -> list[str]:
     """Inline HTML players for the post's videos (Markdown embeds of files outside the vault don't play)."""
-    return [f'<video controls preload="metadata" width="360" '
+    return [f'<video controls preload="metadata" '
             f'src="{items_url}/{post.shortcode}/{path.name}"></video>'
             for path in post.media_files if path.suffix.lower() == ".mp4"]
 
@@ -62,7 +62,7 @@ def media_block(post: Post, items_url: str) -> list[str]:
     lines = []
     for path in post.media_files:
         url = f"{items_url}/{post.shortcode}/{path.name}"
-        lines.append(f'<video controls preload="metadata" width="360" src="{url}"></video>'
+        lines.append(f'<video controls preload="metadata" src="{url}"></video>'
                      if path.suffix.lower() == ".mp4" else f"![]({url})")
     return lines
 

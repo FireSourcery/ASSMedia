@@ -219,7 +219,7 @@ class BuildTests(CliTestCase):
 
 
 class UpdateMediaTests(CliTestCase):
-    PLAYER = '<video controls preload="metadata" width="360" src="file:///D:/m/raw/Instagram/items/X/X_02.mp4"></video>'
+    PLAYER = '<video controls preload="metadata" src="file:///D:/m/raw/Instagram/items/X/X_02.mp4"></video>'
     PHOTO = "![](file:///D:/m/raw/Instagram/items/X/X_01.jpg)"
     EXPECTED_BODY = "\n# T (someone)\n\n" + PHOTO + "\n\n" + PLAYER + "\n\n> a caption\n"
 
