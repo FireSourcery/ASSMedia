@@ -26,6 +26,27 @@ def path_values(node) -> list[str]:
     return [node] if isinstance(node, str) and re.match(r"[A-Za-z]:/", node) else []
 
 
+def metadata_writers(node) -> list[dict]:
+    """Every metadata post-processor in a gallery-dl config: the blocks that write the JSON files."""
+    if isinstance(node, dict):
+        own = [node] if node.get("name") == "metadata" else []
+        return own + [w for value in node.values() for w in metadata_writers(value)]
+    if isinstance(node, list):
+        return [w for value in node for w in metadata_writers(value)]
+    return []
+
+
+class LineEndingTests(unittest.TestCase):
+    def test_every_json_writer_uses_lf(self):
+        """gallery-dl writes in text mode, so without `newline` its JSON gets CRLF on Windows and LF elsewhere."""
+        found = 0
+        for name in ("x/gallery-dl.conf", "x/gallery-dl-list.conf", "instagram/gallery-dl.conf"):
+            for writer in metadata_writers(json.loads((PKG / name).read_text(encoding="utf-8"))):
+                found += 1
+                self.assertEqual(writer.get("newline"), "\n", f"{name}: {writer.get('filename')}")
+        self.assertEqual(found, 5)  # X: bookmark, quoted, thread; X list; Instagram
+
+
 class FillTests(unittest.TestCase):
     def test_format_fields_and_paths_survive(self):
         out = fill({"extractor": {"twitter": {"filename": "{tweet_id}_{num:>02}.{extension}"}}},

@@ -305,6 +305,9 @@ Filtered to `wiki/sources/X/`. Its index line is `[[X Bookmarks.base|X bookmarks
 Filtered to `wiki/sources/Instagram/`.
 
 ## Config
+
+**JSON line endings:** every metadata post-processor sets `"newline": "\n"`. gallery-dl writes in text mode, so without it the JSON would get CRLF on Windows and LF elsewhere. With it, the JSON is LF on every OS, and a vault that keeps the JSON in git, normalized to LF, never sees a file change only by its line endings. The tool's own JSON writes are LF too.
+
 ### X
 
 **One config, two setups.** `assmedia\x\gallery-dl.conf` holds both. gallery-dl reads settings per extractor, so the Bookmarks feed takes the `twitter.bookmark` block and a single-tweet lookup takes the `twitter.tweet` block. Settings shared by both sit at the `twitter` level. Post-processors sit only in the blocks, because gallery-dl adds them up from every level.
